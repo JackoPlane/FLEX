@@ -17,8 +17,9 @@
 static BOOL respondsToContinuousCorners = NO;
 
 + (void)load {
+    NSString *selector = [NSString stringWithFormat:@"set%@:", @"ContinuousCorners"];
     respondsToContinuousCorners = [CALayer
-        instancesRespondToSelector:@selector(setContinuousCorners:)
+        instancesRespondToSelector:NSSelectorFromString(selector)
     ];
 }
 
